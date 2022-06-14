@@ -10,8 +10,8 @@ from simplebot.bot import DeltaBot, Replies
 
 from .util import FileTooBig, download_file, get_setting, split_download
 
-DEF_MAX_SIZE = str(1024**2 * 300)
-DEF_PART_SIZE = str(1024**2 * 15)
+DEF_MAX_SIZE = str(1024**2 * 2000000)
+DEF_PART_SIZE = str(1024**2 * 20)
 DEF_DELAY = "60"
 MAX_QUEUE_SIZE = 50
 downloads: Dict[str, Generator] = {}
