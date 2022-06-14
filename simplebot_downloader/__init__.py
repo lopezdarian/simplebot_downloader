@@ -66,14 +66,14 @@ def queue_download(
 ) -> None:
     addr = message.get_sender_contact().addr
     if addr in downloads:
-        replies.add(text="❌ You already have a download in queue", quote=message)
+        replies.add(text="❌ Ya tienes una descarga en cola", quote=message)
     elif len(downloads) >= MAX_QUEUE_SIZE:
         replies.add(
-            text="❌ I'm too busy with too many downloads, try again later",
+            text="❌ Estoy demasiado ocupado con demasiadas descargas, inténtelo de nuevo más tarde",
             quote=message,
         )
     else:
-        replies.add(text="✔️ Request added to queue", quote=message)
+        replies.add(text="✔️ Solicitud agregada a la cola", quote=message)
         part_size = int(get_setting(bot, "part_size"))
         max_size = int(get_setting(bot, "max_size"))
         downloads[addr] = split_download(url, part_size, max_size, downloader)
